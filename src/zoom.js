@@ -9,6 +9,14 @@ import siteConfig from '@generated/docusaurus.config';
 import mediumZoom from 'medium-zoom'
 
 const { themeConfig } = siteConfig;
+const properties = {
+  container: {
+    top: 64,
+    bottom: 64,
+    right: 20,
+    left: 20,
+  },
+};
 
 export default (function () {
 
@@ -19,7 +27,7 @@ export default (function () {
   const selector = (themeConfig&&themeConfig.zoomSelector) || '.markdown img';
 
   setTimeout(() => {
-    mediumZoom(selector);
+    mediumZoom(selector, properties);
   }, 100);
 
 
@@ -31,7 +39,7 @@ export default (function () {
       }
 
       setTimeout(() => {
-        mediumZoom(selector);
+        mediumZoom(selector, properties);
       }, 100);
 
     },
